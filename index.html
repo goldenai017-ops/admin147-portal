@@ -112,11 +112,7 @@ let docs=read('docs',[]), tasks=read('tasks',[
 {id:1,title:'task1',owner:'Демо / Demo',date:dateOffset(2),done:false,key:true},
 {id:2,title:'task2',owner:'Демо / Demo',date:dateOffset(4),done:false,key:true},
 {id:3,title:'task3',owner:'Демо / Demo',date:dateOffset(6),done:true,key:true}
-]), events=read('events',[
-{id:1,title:'event1',date:dateOffset(1),time:'10:00',place:'Демо / Demo',key:true},
-{id:2,title:'event2',date:dateOffset(3),time:'14:00',place:'Демо / Demo',key:true},
-{id:3,title:'event3',date:dateOffset(7),time:'11:00',place:'Демо / Demo',key:true}
-]);
+]), events=read('events',[]).filter(e=>!e.key);
 const t=k=>(translations[lang]&&translations[lang][k])||k;
 function fmtDate(s){if(!s)return '—';return new Date(s+'T12:00:00').toLocaleDateString(lang==='kk'?'kk-KZ':'ru-RU',{day:'2-digit',month:'short',year:'numeric'})}
 function toast(s){const el=$('#toast');el.textContent=s;el.style.display='block';clearTimeout(window._toast);window._toast=setTimeout(()=>el.style.display='none',2800)}
