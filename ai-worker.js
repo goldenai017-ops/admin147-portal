@@ -52,7 +52,7 @@ Rules:
 - Avoid duplicate events across the two plans; if same event/date appears twice, return one item and mention both sources in notes.
 - Keep event titles concise. Return at most 250 events, sorted by date.
 ${plans.map((p, i) => `\nDOCUMENT ${i + 1} — SOURCE: ${p.source}; FILE: ${p.fileName}\n--- BEGIN DOCUMENT TEXT ---\n${p.text}\n--- END DOCUMENT TEXT ---`).join("\n")}`;
-      const aiRes = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + encodeURIComponent(env.GEMINI_API_KEY), {
+      const aiRes = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=" + encodeURIComponent(env.GEMINI_API_KEY), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
