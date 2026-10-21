@@ -139,7 +139,8 @@ function calAgendaHtml(list){if(!list.length)return '<div class="calendar-empty"
 function renderCalendarWidget(scope){
  const root=$(scope==='home'?'#homeCalendarGrid':'#pageCalendarGrid');if(!root)return;
  const title=$( '[data-calendar-title="'+scope+'"]'),label=$('[data-calendar-label="'+scope+'"]');
- $('[data-cal-view][data-cal-scope="'+scope+'"]').forEach(b=>{b.classList.toggle('active',b.dataset.calView===calendarView);b.textContent=lang==='ru'?({day:'День',week:'Неделя',month:'Месяц'}[b.dataset.calView]):({day:'Күн',week:'Апта',month:'Ай'}[b.dataset.calView])});$('[data-cal-today="'+scope+'"]').textContent=lang==='ru'?'Сегодня':'Бүгін';const sub=$('[data-calendar-sub="'+scope+'"]');if(sub)sub.textContent=lang==='ru'?'Мероприятия из утверждённых планов':'Бекітілген жоспарлардағы іс-шаралар';
+
+ document.querySelectorAll('[data-cal-view][data-cal-scope="'+scope+'"]').forEach(b=>{b.classList.toggle('active',b.dataset.calView===calendarView);b.textContent=lang==='ru'?({day:'День',week:'Неделя',month:'Месяц'}[b.dataset.calView]):({day:'Күн',week:'Апта',month:'Ай'}[b.dataset.calView])});$('[data-cal-today="'+scope+'"]').textContent=lang==='ru'?'Сегодня':'Бүгін';const sub=$('[data-calendar-sub="'+scope+'"]');if(sub)sub.textContent=lang==='ru'?'Мероприятия из утверждённых планов':'Бекітілген жоспарлардағы іс-шаралар';
  const anchor=new Date(calendarDate);anchor.setHours(12,0,0,0);
  let start,end,heading='';
  if(calendarView==='month'){const first=new Date(anchor.getFullYear(),anchor.getMonth(),1,12);const mondayOffset=(first.getDay()+6)%7;start=calAddDays(first,-mondayOffset);end=calAddDays(start,41);heading=calMonthLabel(anchor)}
