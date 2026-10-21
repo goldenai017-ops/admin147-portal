@@ -5,7 +5,7 @@
 window.ADMIN147_DRIVE_CONFIG = {
   clientId: "766715950552-qhv4i1ahftu78lirnq9iv55hq5nco3o3.apps.googleusercontent.com",
   // Cloudflare Worker URL will be added after deploying ai-worker.js. Do not put API keys here.
-  aiEndpoint: "",
+  aiEndpoint: "gymnasium147-ai.ala147gymnasium.workers.dev",
   folderIds: {
     "Тәрбие жоспары": "1ewPJNa4gpfatC7tJ6_MVjEcqnbZ6HADC",
     "Мектепішілік бақылау жоспары": "1_I3clOi44hRyZzr7FYWP-PnsmHccrRfR"
