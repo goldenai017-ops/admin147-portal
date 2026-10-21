@@ -1,8 +1,12 @@
 /* Google Drive setup for Gymnasium No. 147 portal.
- * Replace both placeholders with values from Google Cloud Console and Google Drive.
- * Do not put client secrets, API keys with unrestricted privileges, or access tokens here.
+ * Set clientId to the OAuth 2.0 Web application client ID from Google Cloud Console.
+ * Folder IDs are the two shared folders provided for this portal.
+ * Never put client secrets or access tokens here.
  */
 window.ADMIN147_DRIVE_CONFIG = {
   clientId: "PASTE_GOOGLE_OAUTH_WEB_CLIENT_ID_HERE",
-  folderId: "PASTE_SHARED_GOOGLE_DRIVE_FOLDER_ID_HERE"
+  folderIds: {
+    "Тәрбие жоспары": "1ewPJNa4gpfatC7tJ6_MVjEcqnbZ6HADC",
+    "Мектепішілік бақылау жоспары": "1_I3clOi44hRyZzr7FYWP-PnsmHccrRfR"
+  }
 };
